@@ -1,14 +1,22 @@
-from tkinter import Tk, filedialog
 import pandas as pd
 
-root = Tk()
-root.withdraw()
+try:
+    from tkinter import Tk, filedialog
+    tkinter_available = True
+except ImportError:
+    tkinter_available = False
+#if not tkinter it would use command line only 
+if tkinter_available:
+    root = Tk()
+    root.withdraw()
 
-csv_file = filedialog.askopenfilename(
-    title="Select CSV file",
-    filetypes=[("CSV files", "*.csv")],
-    initialfile=""
-)
+    csv_file = filedialog.askopenfilename(
+        title="Select CSV file",
+        filetypes=[("CSV files", "*.csv")],
+        initialfile=""
+    )
+else:
+    csv_file = input("Enter CSV file path: ")
 
 print(f"File Selected: {csv_file}") 
 
@@ -39,4 +47,5 @@ df_filtered.to_csv("Behavior.csv", index=False)
 
 #I did not add any error handling so it is very important not to break the script.
 #This script is under GNU General Public License v3.0 (GPL-3.0) and is provided "as is" without any warranty. Use at your own risk.
+
 #Made by Arcady Oboukhov. Source: https://github.com/arcadyoboukhov/CSV-Frame-Processor-for-Caltrig-S1-S4-Session-Extractor-?
