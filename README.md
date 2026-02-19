@@ -49,7 +49,7 @@ pip install pandas
 
     Run the script:
 
-python script_name.py
+python behavior_file_create_script.py
 
     Select a CSV file using the file dialog.
 
