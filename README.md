@@ -19,7 +19,7 @@ The script also:
 - Outputs a ready-to-use `Behavior.csv`
 
 ---
-
+💡 Note: If the system does not support tkinter (e.g., headless servers), the script falls back to console input for file selection instead of a GUI file dialog.
 ## ⚡ Features
 - **Graphical File Selection:** Tkinter file dialog for easy CSV selection.  
 - **Session Extraction:** Extract S1 or S4 (first or last 15 min).  
